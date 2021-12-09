@@ -1,4 +1,5 @@
 package com.andrewn.tictactoe.domain;
+import com.google.common.base.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,4 +39,14 @@ public class Player {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("id", id)
+                .add("userName", userName)
+                .add("email", email)
+                .add("password", password)
+                .toString();
+    }
 }
